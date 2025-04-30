@@ -1,0 +1,1454 @@
+{
+	"info": {
+		"_postman_id": "263e4c80-3adc-4879-ac27-66318b9522fa",
+		"name": "MakananOnline",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "35046068"
+	},
+	"item": [
+		{
+			"name": "user-service",
+			"item": [
+				{
+					"name": "User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Bigar\",\r\n  \"email\": \"Bigar@example.com\",\r\n  \"password\": \"bigar123\",\r\n  \"address\": \"Jl. Dharmawangsa No. 45\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/users/"
+					},
+					"response": [
+						{
+							"name": "Sukses",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Budi\",\r\n  \"email\": \"budi@example.com\",\r\n  \"password\": \"password123\",\r\n  \"address\": \"Jl. Sudirman No. 45\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}api/users"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:16:10 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:16:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User berhasil didaftarkan\",\n    \"data\": {\n        \"name\": \"Budi\",\n        \"email\": \"budi@example.com\",\n        \"password\": \"$2y$10$zuiByis36bsUqeWphPVfIexS.ERVUq6KvAbEvotHtmf40gg0VWRtW\",\n        \"address\": \"Jl. Sudirman No. 45\",\n        \"updated_at\": \"2025-04-30T15:16:09.000000Z\",\n        \"created_at\": \"2025-04-30T15:16:09.000000Z\",\n        \"id\": 1\n    }\n}"
+						},
+						{
+							"name": "Gagal",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Budi\",\r\n  \"email\": \"budi@example.com\",\r\n  \"password\": varhan,\r\n  \"address\": \"Jl. Sudirman No. 45\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}api/users"
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:16:32 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:16:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Validasi gagal\",\n    \"errors\": {\n        \"name\": [\n            \"The name field is required.\"\n        ],\n        \"email\": [\n            \"The email field is required.\"\n        ],\n        \"password\": [\n            \"The password field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}api/users"
+					},
+					"response": [
+						{
+							"name": "Sukses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}api/users"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:48:49 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:48:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Data user berhasil diambil\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Budi\",\n            \"email\": \"budi@example.com\",\n            \"password\": \"$2y$10$zuiByis36bsUqeWphPVfIexS.ERVUq6KvAbEvotHtmf40gg0VWRtW\",\n            \"address\": \"Jl. Sudirman No. 45\",\n            \"created_at\": \"2025-04-30T15:16:09.000000Z\",\n            \"updated_at\": \"2025-04-30T15:16:09.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Dedi\",\n            \"email\": \"dedi@example.com\",\n            \"password\": \"$2y$10$gN60PlhugrPbR.FxL1uiKe3lQzTYl21/HVI6aaeD3pC5.x1s5m9nS\",\n            \"address\": \"Jl. Dharmawangsa No. 45\",\n            \"created_at\": \"2025-04-30T15:24:59.000000Z\",\n            \"updated_at\": \"2025-04-30T15:24:59.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Bayu\",\n            \"email\": \"Bayu@example.com\",\n            \"password\": \"$2y$10$sXO2x1JortXgpAR.C6GpTeQeOvErWUBWbmsnVwLazalAo1.bDzYcq\",\n            \"address\": \"Jl. Dharmawangsa No. 45\",\n            \"created_at\": \"2025-04-30T15:25:51.000000Z\",\n            \"updated_at\": \"2025-04-30T15:25:51.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Bigar\",\n            \"email\": \"Bigar@example.com\",\n            \"password\": \"$2y$10$hJFbZOe2FxpZSXmwn.cBie34ldJUdZISXR0nadypjaEuu8WwMM5gC\",\n            \"address\": \"Jl. Dharmawangsa No. 45\",\n            \"created_at\": \"2025-04-30T15:26:20.000000Z\",\n            \"updated_at\": \"2025-04-30T15:26:20.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}api/users/2"
+					},
+					"response": [
+						{
+							"name": "Sukses 2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}api/users/2"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:49:32 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:49:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Detail user ditemukan\",\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Dedi\",\n        \"email\": \"dedi@example.com\",\n        \"password\": \"$2y$10$gN60PlhugrPbR.FxL1uiKe3lQzTYl21/HVI6aaeD3pC5.x1s5m9nS\",\n        \"address\": \"Jl. Dharmawangsa No. 45\",\n        \"created_at\": \"2025-04-30T15:24:59.000000Z\",\n        \"updated_at\": \"2025-04-30T15:24:59.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Gagal 2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}api/users/5"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:49:50 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:49:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"User tidak ditemukan\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Kocak\",\r\n  \"email\": \"Kocak@example.com\",\r\n  \"password\": \"Kocak123\",\r\n  \"address\": \"Jl. Sudirman No. 45\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/users/2"
+					},
+					"response": [
+						{
+							"name": "Sukses",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Kocak\",\r\n  \"email\": \"Kocak@example.com\",\r\n  \"password\": \"Kocak123\",\r\n  \"address\": \"Jl. Sudirman No. 45\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}api/users/2"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:51:33 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:51:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User berhasil diperbarui\",\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Kocak\",\n        \"email\": \"Kocak@example.com\",\n        \"password\": \"$2y$10$gN60PlhugrPbR.FxL1uiKe3lQzTYl21/HVI6aaeD3pC5.x1s5m9nS\",\n        \"address\": \"Jl. Sudirman No. 45\",\n        \"created_at\": \"2025-04-30T15:24:59.000000Z\",\n        \"updated_at\": \"2025-04-30T15:51:33.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Gagal",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Kocak\",\r\n  \"email\": \"Kocak@example.com\",\r\n  \"password\": \"Kocak123\",\r\n  \"address\": \"Jl. Sudirman No. 45\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}api/users/5"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:52:24 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:52:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"User tidak ditemukan\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Sukses",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{base_url}}api/users/4"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:53:52 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:53:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User berhasil dihapus\"\n}"
+						},
+						{
+							"name": "Gagal",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{base_url}}api/users/5"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:54:09 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 15:54:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"User tidak ditemukan\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "menu-service",
+			"item": [
+				{
+					"name": "Menu",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"\",\r\n  \"price\": \"\",\r\n  \"stock\": 15,\r\n  \"category\": \"Makanan\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/menus"
+					},
+					"response": [
+						{
+							"name": "Sukses",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Nasi Goreng\",\r\n  \"price\": 20000,\r\n  \"category\": \"Makanan\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}api/menus"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8082"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 16:20:22 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 16:20:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Menu berhasil ditambahkan\",\n    \"data\": {\n        \"name\": \"Nasi Goreng\",\n        \"price\": 20000,\n        \"updated_at\": \"2025-04-30T16:20:22.000000Z\",\n        \"created_at\": \"2025-04-30T16:20:22.000000Z\",\n        \"id\": 1\n    }\n}"
+						},
+						{
+							"name": "Gagal",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"\",\r\n  \"price\": \"\",\r\n  \"stock\": 15,\r\n  \"category\": \"Makanan\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}api/menus"
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8082"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 16:25:10 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 16:25:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Menu gagal ditambahkan\",\n    \"data\": {\n        \"name\": null,\n        \"price\": null,\n        \"stock\": 15,\n        \"category\": \"Makanan\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Menu",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/menus/5"
+					},
+					"response": [
+						{
+							"name": "Sukses 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}api/menus"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8082"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 16:34:12 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 16:34:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Daftar menu berhasil diambil\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Nasi Goreng\",\n            \"price\": \"20000.00\",\n            \"stock\": 0,\n            \"category\": null,\n            \"created_at\": \"2025-04-30T16:20:22.000000Z\",\n            \"updated_at\": \"2025-04-30T16:20:22.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Nasi Goreng\",\n            \"price\": \"20000.00\",\n            \"stock\": 0,\n            \"category\": null,\n            \"created_at\": \"2025-04-30T16:22:10.000000Z\",\n            \"updated_at\": \"2025-04-30T16:22:10.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Nasi Goreng\",\n            \"price\": \"20000.00\",\n            \"stock\": 15,\n            \"category\": \"Makanan\",\n            \"created_at\": \"2025-04-30T16:28:08.000000Z\",\n            \"updated_at\": \"2025-04-30T16:28:08.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Nasi Campur\",\n            \"price\": \"15000.00\",\n            \"stock\": 5,\n            \"category\": \"Makanan\",\n            \"created_at\": \"2025-04-30T16:29:02.000000Z\",\n            \"updated_at\": \"2025-04-30T16:29:02.000000Z\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Gagal",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}api/menus/5"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8082"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 16:34:54 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 16:34:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Menu tidak ditemukan\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Menu",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base_url}}api/menus/2"
+					},
+					"response": [
+						{
+							"name": "Sukses 1",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{base_url}}api/menus/2"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8082"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 16:37:05 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 16:37:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Menu berhasil dihapus\"\n}"
+						},
+						{
+							"name": "Gagal",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{base_url}}api/menus/5"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8082"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 16:37:48 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 16:37:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Menu tidak ditemukan\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Menu",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Nasi Kuning\",\r\n  \"price\": 14500,\r\n  \"stock\": 15,\r\n  \"category\": \"Makanan\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/menus/2"
+					},
+					"response": [
+						{
+							"name": "Sukses 1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Nasi Kuning\",\r\n  \"price\": 14500,\r\n  \"stock\": 15,\r\n  \"category\": \"Makanan\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}api/menus/2"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8082"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 16:40:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 16:40:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Menu berhasil diperbarui\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Nasi Kuning\",\n        \"price\": 14500,\n        \"stock\": 15,\n        \"category\": \"Makanan\",\n        \"created_at\": \"2025-04-30T16:20:22.000000Z\",\n        \"updated_at\": \"2025-04-30T16:40:13.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Gagal",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Lontong Kupang\",\r\n  \"price\": 14500,\r\n  \"stock\": 10,\r\n  \"category\": \"Makanan\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}api/menus/2"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8082"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 16:41:28 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 16:41:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Menu tidak ditemukan\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "order-service",
+			"item": [
+				{
+					"name": "Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"menu_id\": 1,\r\n    \"quantity\": 3,\r\n    \"status\": \"pending\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}api/orders"
+					},
+					"response": [
+						{
+							"name": "Sukses",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": 1,\r\n    \"menu_id\": 1,\r\n    \"quantity\": 3,\r\n    \"status\": \"pending\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}api/orders"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8031"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 17:12:47 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 17:12:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Pesanan berhasil dibuat\",\n    \"data\": {\n        \"user_id\": 1,\n        \"menu_id\": 1,\n        \"quantity\": 3,\n        \"status\": \"pending\",\n        \"updated_at\": \"2025-04-30T17:12:47.000000Z\",\n        \"created_at\": \"2025-04-30T17:12:47.000000Z\",\n        \"id\": 1\n    }\n}"
+						},
+						{
+							"name": "Gagal",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": 1,\r\n    \"menu_id\": 2,\r\n    \"quantity\": 3,\r\n    \"status\": \"pending\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}api/orders"
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8031"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 17:13:05 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 17:13:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Validasi gagal\",\n    \"errors\": {\n        \"menu_id\": [\n            \"The selected menu id is invalid.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}api/orders/5"
+					},
+					"response": [
+						{
+							"name": "Sukses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}api/orders"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8031"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 17:14:00 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 17:14:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Daftar pesanan berhasil diambil\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"menu_id\": 1,\n            \"quantity\": 3,\n            \"status\": \"pending\",\n            \"created_at\": \"2025-04-30T17:12:47.000000Z\",\n            \"updated_at\": \"2025-04-30T17:12:47.000000Z\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Gagal",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}api/orders/5"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8031"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 17:14:37 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 17:14:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Pesanan tidak ditemukan\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
